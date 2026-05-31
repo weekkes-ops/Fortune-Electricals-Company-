@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom ledger paper styling & print rules */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+    font-size: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide print-irrelevant parts */
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Force printable area to expand fill width */
+  .print\:p-0 {
+    padding: 0 !important;
+  }
+  
+  .print\:m-0 {
+    margin: 0 !important;
+  }
+
+  .print\:border-none {
+    border: none !important;
+  }
+
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+
+  .print\:rounded-none {
+    border-radius: 0 !important;
+  }
+
+  /* Section breaks so sections do not cut awkwardly mid-way */
+  .page-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-bottom: 2rem !important;
+  }
+
+  #invoice-summary-block {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Double underlines for printing accounting totals */
+  .print\:border-double-bottom {
+    border-bottom: 3px double black !important;
+  }
+}
+
+/* Elegant ledger grid line background (only visible on screen) */
+.ledger-grid {
+  background-image: 
+    linear-gradient(rgba(203, 213, 225, 0.4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(203, 213, 225, 0.4) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: center;
+}
+
+/* Ledger paper margin red rules */
+.ledger-margin-left {
+  border-left: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Custom scrollbars for high fidelity app lists */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.3);
+}

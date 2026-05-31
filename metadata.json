@@ -1,0 +1,6 @@
+{
+  "name": "Fortune Electricals Management System",
+  "description": "A professional estimation and invoice management system for Fortune Electricals, featuring custom estimate templates, interactive ledger building, automatic recalculations, and print layouts matching original ledgers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
